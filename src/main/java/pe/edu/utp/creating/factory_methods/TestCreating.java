@@ -17,6 +17,8 @@ public class TestCreating {
     public static void main(String[] args) {
 
         Software opera = Software.valueOf("Opera", 30, 0, Software.Type.UTILITY);
+        OS ubuntu = new OS("Ubuntu", OS.Type.LINUX,"20");
+        Software zoom = Software.valueOf("Zoom",5,3, Software.Type.UTILITY);
 
         OS fedora = new OS("Fedora", OS.Type.LINUX, "34.5.125");
         Software sw_fedora = Software.from(fedora);

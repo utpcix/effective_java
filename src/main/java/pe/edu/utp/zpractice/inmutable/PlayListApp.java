@@ -11,7 +11,19 @@ public class PlayListApp {
 
     public static void main(String[] args) throws IOException {
 
-        // code here
+        String ruta = "src/main/resources/songs.csv";
+        List<Song> lista = Song.from(ruta);
+        List<Song> miSeleccion = lista.stream()
+                .filter(s -> s.getArtist().contains("Metallica"))
+                .collect(Collectors.toUnmodifiableList());
+
+        PlayList mySpotify = PlayList.from("Mi super lista de canciones",
+                miSeleccion);
+
+
+        Set<Song> mis_canciones = mySpotify.getSongSet();
+        mis_canciones.forEach(System.out::println);
+
 
     }
 }
